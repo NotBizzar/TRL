@@ -1,0 +1,653 @@
+{
+  "tasks": [
+    /// CMake Tasks ///    
+    // Clang
+    {
+      "label": "CMake: Clang-Debug",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--preset Clang-Debug",
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "CMake: Clang-Release",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--preset Clang-Release"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "CMake: Clang-Export",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--preset Clang-Export",
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    // Clang CMake All
+    {
+      "label": "CMake: Clang-CMake-All",
+      "type": "shell",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "CMake: Clang-Debug",
+        "CMake: Clang-Release",
+        "CMake: Clang-Export"
+      ],
+    },
+
+    // MSVC
+    {
+      "label": "CMake: MSVC-Debug",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--preset MSVC-Debug",
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "CMake: MSVC-Release",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--preset MSVC-Release"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "CMake: MSVC-Export",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--preset MSVC-Export",
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    // MSVC CMake All
+    {
+      "label": "CMake: MSVC-CMake-All",
+      "type": "shell",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "CMake: MSVC-Debug",
+        "CMake: MSVC-Release",
+        "CMake: MSVC-Export"
+      ],
+    },
+    
+
+    /// Build Tasks ///
+    // Clang
+    {
+      "label": "Build: Clang-Debug",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "--preset",
+        "Clang-Debug"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Build: Clang-Release",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "--preset",
+        "Clang-Release"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Build: Clang-Export",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "--preset",
+        "Clang-Export"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    // Clang Build All
+    {
+      "label": "Build: Clang-Build-All",
+      "type": "shell",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "Build: Clang-Debug",
+        "Build: Clang-Release",
+        "Build: Clang-Export"
+      ],
+    },
+
+    // MSVC
+    {
+      "label": "Build: MSVC-Debug",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "--preset",
+        "MSVC-Debug"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Build: MSVC-Release",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "--preset",
+        "MSVC-Release"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Build: MSVC-Export",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "--preset",
+        "MSVC-Export"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    // MSVC Build All
+    {
+      "label": "Build: MSVC-Build-All",
+      "type": "shell",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "Build: MSVC-Debug",
+        "Build: MSVC-Release",
+        "Build: MSVC-Export"
+      ],
+    },
+
+    /// Clean Tasks ///
+    // Clang
+    {
+      "label": "Clean: Clang-Debug",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "--preset",
+        "Clang-Debug",
+        "--target",
+        "clean"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Clean: Clang-Release",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "--preset",
+        "Clang-Release",
+        "--target",
+        "clean"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Clean: Clang-Export",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "--preset",
+        "Clang-Export",
+        "--target",
+        "clean"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    // Clang Clean All
+    {
+      "label": "Clean: Clang-Clean-All",
+      "type": "shell",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "Clean: Clang-Debug",
+        "Clean: Clang-Release",
+        "Clean: Clang-Export"
+      ],
+    },
+
+    // MSVC
+    {
+      "label": "Clean: MSVC-Debug",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "--preset",
+        "MSVC-Debug",
+        "--target",
+        "clean"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Clean: MSVC-Release",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "--preset",
+        "MSVC-Release",
+        "--target",
+        "clean"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Clean: MSVC-Export",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "--preset",
+        "MSVC-Export",
+        "--target",
+        "clean"
+      ],
+      "options": {
+          "cwd": "${workspaceFolder}"
+       }
+    },
+    // MSVC Clean All
+    {
+      "label": "Clean: MSVC-Clean-All",
+      "type": "shell",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "Clean: MSVC-Debug",
+        "Clean: MSVC-Release",
+        "Clean: MSVC-Export"
+      ],
+    },
+
+
+    /// CMake Refresh Tasks ///
+    // Clang
+    {
+      "label": "CMake Refresh: Clang-Debug",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--preset",
+        "Clang-Debug",
+        "--fresh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "CMake Refresh: Clang-Release",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--preset",
+        "Clang-Release",
+        "--fresh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "CMake Refresh: Clang-Export",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--preset",
+        "Clang-Export",
+        "--fresh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    // Clang Refresh All
+    {
+      "label": "CMake Refresh: Clang-Refresh-All",
+      "type": "shell",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "CMake Refresh: Clang-Debug",
+        "CMake Refresh: Clang-Release",
+        "CMake Refresh: Clang-Export"
+      ],
+    },
+
+    // MSVC
+    {
+      "label": "CMake Refresh: MSVC-Debug",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--preset",
+        "MSVC-Debug",
+        "--fresh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "CMake Refresh: MSVC-Release",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--preset",
+        "MSVC-Release",
+        "--fresh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "CMake Refresh: MSVC-Export",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--preset",
+        "MSVC-Export",
+        "--fresh"
+      ],
+      "options": {
+          "cwd": "${workspaceFolder}"
+       }
+    },
+    // MSVC Refresh All
+    {
+      "label": "CMake Refresh: MSVC-Refresh-All",
+      "type": "shell",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "CMake Refresh: MSVC-Debug",
+        "CMake Refresh: MSVC-Release",
+        "CMake Refresh: MSVC-Export"
+      ],
+    },
+
+
+    /// CMake All ///
+    {
+      "label": "CMake All",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "CMake: Clang-Debug",
+        "CMake: Clang-Release",
+        "CMake: Clang-Export",
+        "CMake: MSVC-Debug",
+        "CMake: MSVC-Release",
+        "CMake: MSVC-Export"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+
+
+    /// Build All ///
+    {
+      "label": "Build All",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "Build: Clang-Debug",
+        "Build: Clang-Release",
+        "Build: Clang-Export",
+        "Build: MSVC-Debug",
+        "Build: MSVC-Release",
+        "Build: MSVC-Export"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+
+
+    /// Clean All ///
+    {
+      "label": "Clean All",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "Clean: Clang-Debug",
+        "Clean: Clang-Release",
+        "Clean: Clang-Export",
+        "Clean: MSVC-Debug",
+        "Clean: MSVC-Release",
+        "Clean: MSVC-Export"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+
+
+    /// CMake Refresh All ///
+    {
+      "label": "CMake Refresh All",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "CMake Refresh: Clang-Debug",
+        "CMake Refresh: Clang-Release",
+        "CMake Refresh: Clang-Export",
+        "CMake Refresh: MSVC-Debug",
+        "CMake Refresh: MSVC-Release",
+        "CMake Refresh: MSVC-Export"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+
+
+    /// CMake Clean Build All ///
+    {
+      "label": "CMake Clean Build All",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Clean All",
+        "Build All"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+
+
+    /// CMake Refresh Build All ///
+    {
+      "label": "CMake Refresh Build All",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "CMake Refresh All",
+        "Build All"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+
+
+    /// CMake Build All ///
+    {
+      "label": "CMake Build All",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "CMake All",
+        "Build All",
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+
+
+    /// Clang CMake Build All ///
+    {
+      "label": "Clang CMake Build All",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "CMake: Clang-CMake-All",
+        "Build: Clang-Build-All",
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    /// MSVC CMake Build All ///
+    {
+      "label": "MSVC CMake Build All",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "CMake: MSVC-CMake-All",
+        "Build: MSVC-Build-All",
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+
+    /// Clang CMake Build Debug ///
+    {
+      "label": "Clang CMake Build Debug",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "CMake: Clang-Debug",
+        "Build: Clang-Debug"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    /// Clang CMake Build Release ///
+    {
+      "label": "Clang CMake Build Release",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "CMake: Clang-Release",
+        "Build: Clang-Release"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    /// Clang CMake Build Export ///
+    {
+      "label": "Clang CMake Build Export",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "CMake: Clang-Export",
+        "Build: Clang-Export"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    /// MSVC CMake Build Debug ///
+    {
+      "label": "MSVC CMake Build Debug",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "CMake: MSVC-Debug",
+        "Build: MSVC-Debug"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    /// MSVC CMake Build Release ///
+    {
+      "label": "MSVC CMake Build Release",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "CMake: MSVC-Release",
+        "Build: MSVC-Release"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    /// MSVC CMake Build Export ///
+    {
+      "label": "MSVC CMake Build Export",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "CMake: MSVC-Export",
+        "Build: MSVC-Export"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    }
+  ]
+}

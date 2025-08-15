@@ -1,0 +1,21 @@
+{
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "xaver.clang-format",
+
+  "[markdown]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "[json]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "files.associations": {
+    "print.h": "c"
+  },
+}
