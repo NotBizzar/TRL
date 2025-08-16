@@ -27,4 +27,5 @@ target_compile_definitions(${PROJECT_NAME} PUBLIC $<$<CONFIG:Release>:TRL_RELEAS
 
 target_include_directories(${PROJECT_NAME} PUBLIC
   ./Src
+  ./Include
 )
