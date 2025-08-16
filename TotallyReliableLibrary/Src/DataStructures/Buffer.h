@@ -31,3 +31,7 @@ void TRL_Buffer_WriteAt(TRL_Buffer *buffer, size_t index, const void *data);
 
 /// @brief Removes a value at specified index
 void TRL_Buffer_Remove(TRL_Buffer *buffer, size_t index);
+
+/// @brief gives the data of the specified buffer in the specified type.
+/// Can be used for debugging.
+#define TRL_Buffer_GetDataInType(buffer, type) ((type *)buffer->Raw)

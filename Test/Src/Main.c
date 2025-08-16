@@ -12,6 +12,8 @@ int main()
 
   TRL_Buffer_Remove(buffer, 2);
 
+  int *ptr = TRL_Buffer_GetDataInType(buffer, int);
+
   int value = *(int *)TRL_Buffer_Read(buffer, 2);
   printf("%d\n", value);
 }
