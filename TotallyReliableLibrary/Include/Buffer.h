@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Util/Datatype.h"
+#include "Datatype.h"
 
 #include <stdlib.h>
 
@@ -31,6 +31,10 @@ void TRL_Buffer_WriteAt(TRL_Buffer *buffer, size_t index, const void *data);
 
 /// @brief Removes a value at specified index
 void TRL_Buffer_Remove(TRL_Buffer *buffer, size_t index);
+
+/// @brief returns the actual size of the buffer. (basically, multiplies the
+/// buffer.Size with buffer.type)
+size_t TRL_Buffer_GetActualSize(TRL_Buffer *buffer);
 
 /// @brief gives the data of the specified buffer in the specified type.
 /// Can be used for debugging.

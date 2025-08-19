@@ -81,3 +81,8 @@ void TRL_Buffer_Remove(TRL_Buffer *buffer, size_t index)
 
   memmove(removed, (char *)removed + elemSize, buffer->Size-- * elemSize);
 }
+
+size_t TRL_Buffer_GetActualSize(TRL_Buffer *buffer)
+{
+  return buffer->Size * TRL_DataTypeValue(buffer->Type);
+}
