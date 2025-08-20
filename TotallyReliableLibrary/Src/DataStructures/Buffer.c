@@ -1,13 +1,10 @@
 #include "Buffer.h"
-#include "Util/Assert.h"
+#include "Util/TRL_Assert.h"
 
 #include <malloc.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
-
-/// @todo In this file, we return if somethign goes wrong with the buffer.
-/// instead, we need an Assertion to occure.
 
 TRL_Buffer *TRL_Buffer_Create(TRL_DataType type, size_t size)
 {

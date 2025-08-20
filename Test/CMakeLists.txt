@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.27)
+project(TEST)
 
 file(GLOB_RECURSE TEST_SOURCES "./Src/*.c")
 

@@ -1,19 +1,33 @@
 #include <Buffer.h>
+#include <Chain.h>
 
 #include <stdio.h>
 
 int main()
 {
-  TRL_Buffer *buffer = TRL_Buffer_Create(TRL_DataType_Int, 0);
-  TRL_Buffer_Write(buffer, &(int){69});
-  TRL_Buffer_Write(buffer, &(int){12});
-  TRL_Buffer_Write(buffer, &(int){90});
-  TRL_Buffer_Write(buffer, &(int){9});
+  TRL_Chain chain = TRL_Chain_Create(TRL_DataType_Int);
+  TRL_Chain_InsertBack(&chain, &(int){10});
+  TRL_Chain_InsertBack(&chain, &(int){11});
+  TRL_ChainItem *item = TRL_Chain_InsertBack(&chain, &(int){12});
+  TRL_Chain_InsertBack(&chain, &(int){13});
 
-  int *ptr = TRL_Buffer_GetDataInType(buffer, int);
+  TRL_Chain_InsertFront(&chain, &(int){100});
+  TRL_Chain_InsertFront(&chain, &(int){99});
+  TRL_Chain_InsertFront(&chain, &(int){98});
+  TRL_Chain_InsertFront(&chain, &(int){97});
+  TRL_Chain_InsertFront(&chain, &(int){96});
 
-  TRL_Buffer_WriteAt(buffer, 0, &(int){6969});
+  TRL_Chain_InsertAfter(&chain, item, &(int){69});
+  TRL_Chain_InsertBefore(&chain, item, &(int){31});
 
-  int value = *(int *)TRL_Buffer_Read(buffer, 0);
-  printf("%d\n", value);
+  TRL_Chain_RemoveAt(&chain, item);
+
+  TRL_ChainItem *node = chain.First;
+  while(node != NULL)
+  {
+    printf("%d\n", *(int *)node->Data);
+    node = node->Next;
+  }
+
+  TRL_Chain_Destroy(&chain);
 }

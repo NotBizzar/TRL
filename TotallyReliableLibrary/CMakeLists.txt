@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.27)
-set(PROJECT_NAME TRL)
+project(TRL)
 
 file(GLOB_RECURSE TRL_SOURCES "./Src/*.c")
 
