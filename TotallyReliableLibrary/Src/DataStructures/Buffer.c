@@ -6,9 +6,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-/// @todo In this file, we return if somethign goes wrong with the buffer.
-/// instead, we need an Assertion to occure.
-
 TRL_Buffer *TRL_Buffer_Create(TRL_DataType type, size_t size)
 {
   TRL_Buffer *buffer = malloc(sizeof(TRL_Buffer));

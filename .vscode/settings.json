@@ -15,17 +15,5 @@
     "editor.formatOnSave": false,
     "editor.defaultFormatter": null
   },
-  "files.associations": {
-    "print.h": "c",
-    "stddef.h": "c",
-    "iterator": "c",
-    "format": "c",
-    "initializer_list": "c",
-    "utility": "c",
-    "xstring": "c",
-    "xutility": "c",
-    "buffer.h": "c",
-    "datastructures.h": "c",
-    "datatype.h": "c"
-  },
+  
 }
