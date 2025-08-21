@@ -3,7 +3,7 @@
 
 # Totally Reliable Library AKA ***TRL***
 
-This is like a standard library for C but...
+This is like a standard library for C but...\
 This project was made to learn Data structures and Algorithms\
 But also to have an In-House standard library.
 
