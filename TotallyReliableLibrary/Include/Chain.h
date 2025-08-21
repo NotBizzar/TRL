@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Datatype.h"
+#include "DataType.h"
 
 #include <stdint.h>
 
