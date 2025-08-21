@@ -1,5 +1,5 @@
 #include "Buffer.h"
-#include "Util/Assert.h"
+#include "Util/TRL_Assert.h"
 
 #include <malloc.h>
 #include <stdbool.h>
@@ -51,11 +51,20 @@ size_t TRL_Buffer_Write(TRL_Buffer *buffer, const void *data)
 {
   TRL_ASSERT(buffer, "The Specified Buffer Doesn't Exist. Did You Create One "
                      "With TRL_Buffer_Create?");
-  size_t offset = buffer->Size++ * TRL_DataTypeValue(buffer->Type);
-  memcpy((char *)buffer->Raw + offset, data, TRL_DataTypeValue(buffer->Type));
+
+  int elemSize = TRL_DataTypeValue(buffer->Type);
+  size_t newSize = (buffer->Size + 1) * elemSize;
+  void *newRaw = realloc(buffer->Raw, newSize);
+  TRL_ASSERT(newRaw, "Failed To Reallocate Memory Of The Buffer. This Normally "
+                     "Shouldn't Happen. Did You Specify The Correct Buffer?");
+  buffer->Raw = newRaw;
+
+  size_t offset = buffer->Size++ * elemSize;
+  memcpy((char *)buffer->Raw + offset, data, elemSize);
 
   return buffer->Size;
 }
+
 void TRL_Buffer_WriteAt(TRL_Buffer *buffer, size_t index, const void *data)
 {
   TRL_ASSERT(buffer, "The Specified Buffer Doesn't Exist. Did You Create One "
@@ -76,5 +85,18 @@ void TRL_Buffer_Remove(TRL_Buffer *buffer, size_t index)
   size_t offset = index * elemSize;
   void *removed = (char *)buffer->Raw + offset;
 
-  memmove(removed, (char *)removed + elemSize, buffer->Size-- * elemSize);
+  size_t bytesToMove = (buffer->Size - index - 1) * elemSize;
+  if(bytesToMove <= 0)
+    return;
+  memmove(removed, (char *)removed + elemSize, bytesToMove);
+
+  void *newRaw = realloc(buffer->Raw, --buffer->Size);
+  TRL_ASSERT(newRaw, "Failed To Reallocate Memory Of The Buffer. This Normally "
+                     "Shouldn't Happen. Did You Specify The Correct Buffer?");
+  buffer->Raw = newRaw;
+}
+
+size_t TRL_Buffer_GetActualSize(TRL_Buffer *buffer)
+{
+  return buffer->Size * TRL_DataTypeValue(buffer->Type);
 }

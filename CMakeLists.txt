@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.27)
+project(TotallyReliableLibrary)
 
 set(C_STANDARD 23)
 set(C_STANDARD_REQUIRED ON)

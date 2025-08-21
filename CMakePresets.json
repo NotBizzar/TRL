@@ -39,33 +39,6 @@
         "CMAKE_C_COMPILER": "clang",
         "CMAKE_CXX_COMPILER": "clang++"
       }
-    },
-    {
-      "name": "MSVC-Debug",
-      "displayName": "MSVC_Debug",
-      "generator": "Visual Studio 17 2022",
-      "binaryDir": "${sourceDir}/build/MSVC_Debug",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
-      }
-    },
-    {
-      "name": "MSVC-Release",
-      "displayName": "MSVC_Release",
-      "generator": "Visual Studio 17 2022",
-      "binaryDir": "${sourceDir}/build/MSVC_Release",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release"
-      }
-    },
-    {
-      "name": "MSVC-Export",
-      "displayName": "MSVC_Export",
-      "generator": "Visual Studio 17 2022",
-      "binaryDir": "${sourceDir}/build/MSVC_Export",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Export"
-      }
     }
   ],
 
@@ -81,18 +54,6 @@
   {
     "name": "Clang-Export",
     "configurePreset": "Clang-Export"
-  },
-  {
-    "name": "MSVC-Debug",
-    "configurePreset": "MSVC-Debug"
-  },
-  {
-    "name": "MSVC-Release",
-    "configurePreset": "MSVC-Release"
-  },
-  {
-    "name": "MSVC-Export",
-    "configurePreset": "MSVC-Export"
   }
 ]
 }
